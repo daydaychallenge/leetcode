@@ -79,4 +79,17 @@ class Solution:
             if left == right:
                 res = i + 1
         return s[:res]
+    def longestPrefix_KMP(self, s: str) -> str:
+        i, j = 1, 0
+        n = len(s)
+        dp = [0]*n
+        while i < n:
+            if s[j] == s[i]:
+                j += 1
+                dp[i] = j
+            elif j > 0:
+                j = dp[j-1]
+                i -= 1
+            i += 1
+        return s[:j]
 

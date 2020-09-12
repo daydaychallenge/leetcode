@@ -10,6 +10,10 @@ class TestSolution(unittest.TestCase):
         self.assertEqual("leet", sol.longestPrefix("leetcodeleet"))
         self.assertEqual("", sol.longestPrefix("a"))
 
+        self.assertEqual("l", sol.longestPrefix_KMP("level"))
+        self.assertEqual("abab", sol.longestPrefix_KMP("ababab"))
+        self.assertEqual("leet", sol.longestPrefix_KMP("leetcodeleet"))
+        self.assertEqual("", sol.longestPrefix_KMP("a"))
 
 if __name__ == '__main__':
     unittest.main()
